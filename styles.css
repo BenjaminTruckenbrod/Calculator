@@ -1,0 +1,54 @@
+.calculator{
+    border: 2px solid black;
+    height: 600px;
+    width: 400px;
+}
+
+#screen{
+    border: 2px solid black;
+    text-align: right;
+}
+
+.function{
+    border: 2px solid black;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 10px;
+}
+
+.digits{
+    border: 2px solid black;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 10px;
+}
+
+.operator{
+    border: 2px solid black;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 10px;
+}
+
+.row{
+    display:flex;
+}
+
+ #digits{
+    border: 2px solid black;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 10px;
+}
+
+.equals#equals{
+    border: 2px solid black;
+    height: 40px;
+    width: 80px;
+    text-align: center;
+    line-height: 10px;
+}
