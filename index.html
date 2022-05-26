@@ -5,47 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js-file.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 
     <title>Document</title>
 </head>
 <body>
     <div id="calculator">
-        <div id="screen"><p id="display">1234567890</p></div>
+        <div class="screen"><p id="display">0</p></div>
         <div class="buttons">
             <div class="rows">
                 <div class="row">
-                    <div class="function" id="clear"><p>AC</p></div>
-                    <div class="function" id="+-"><p>+/-</p></div>
-                    <div class="function" id="percent"><p>%</p></div>
+                    <div class="function button" id="clear"><p>AC</p></div>
+                    <div class="function button" id="+-"><p>+/-</p></div>
+                    <div class="function button" id="percent"><p>%</p></div>
                 </div>
                 <div class="row">
-                    <div class="digits" id="1"><p>1</p></div>
-                    <div class="digits" id="2"><p>2</p></div>
-                    <div class="digits" id="3"><p>3</p></div>
+                    <div class="digits button" id="left_edge"><p>1</p></div>
+                    <div class="digits button"><p>2</p></div>
+                    <div class="digits button"><p>3</p></div>
                 </div>
                 <div class="row">
-                    <div class="digits" id="4"><p>4</p></div>
-                    <div class="digits" id="5"><p>5</p></div>
-                    <div class="digits" id="6"><p>6</p></div>
+                    <div class="digits button" id="left_edge"><p>4</p></div>
+                    <div class="digits button"><p>5</p></div>
+                    <div class="digits button"><p>6</p></div>
                 </div>
                 <div class="row">
-                    <div class="digits" id="7"><p>7</p></div>
-                    <div class="digits" id="8"><p>8</p></div>
-                    <div class="digits" id="9"><p>9</p></div>
+                    <div class="digits button" id="left_edge"><p>7</p></div>
+                    <div class="digits button"><p>8</p></div>
+                    <div class="digits button"><p>9</p></div>
                 </div>
                 <div class="row">
-                    <div class="digits" id="zero"><p>0</p></div>
-                    <div class="digits" id="."><p>.</p></div>
+                    <div class="digits button" id="zero"><p>0</p></div>
+                    <div class="digits button" id="dot"><p>.</p></div>
                 </div>
             </div>
             
             <div class="op-container">
-                <div class="operator" id="plus"><p>+</p></div>
-                <div class="operator" id="minus"><p>-</p></div>
-                <div class="operator" id="mulitply"><p>x</p></div>
-                <div class="operator" id="divide"><p>/</p></div>
-                <div id="equals"><p>=</p></div>
+                <div class="operator button" id="plus"><p>+</p></div>
+                <div class="operator button" id="minus"><p>-</p></div>
+                <div class="operator button" id="mulitply"><p>x</p></div>
+                <div class="operator button" id="divide"><p>/</p></div>
+                <div class="button" id="equals"><p>=</p></div>
             </div>
         </div>
 

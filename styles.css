@@ -1,37 +1,38 @@
-.calculator{
-    border: 2px solid black;
-    max-height: 600px;
-    max-width: 400px;
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    margin-top: 160px;
 }
 
-#screen{
-    border: 2px solid black;
+#calculator{
+    border: 2px solid rgb(118, 116, 116);
+    border-radius:10px;
+    min-height: 270px;
+    max-width: 246px;
+}
+
+.screen{
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
     text-align: right;
-    max-width: 172px;
+    max-width: 246px;
+    min-height: 70px;
+    font-family: 'Rubik', sans-serif;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: white;
+    background-color: rgb(56, 45, 82);
 }
 
-.function{
-    border: 2px solid black;
-    height: 40px;
-    width: 40px;
-    text-align: center;
-    line-height: 10px;
-}
-
-.digits{
-    border: 2px solid black;
-    height: 40px;
-    width: 40px;
-    text-align: center;
-    line-height: 10px;
-}
-
-.operator{
-    border: 2px solid black;
-    height: 40px;
-    width: 40px;
-    text-align: center;
-    line-height: 10px;
+#display{
+    padding-right: 7px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 40px;
 }
 
 .row{
@@ -39,19 +40,20 @@
 }
 
 #zero{
-width: 84px;
+width: 122px;
+border-bottom-left-radius: 9px;
+border-left: none;
+border-bottom: none;
 }
 
-.equals#equals{
-    border: 2px solid black;
-    height: 40px;
-    width: 40px;
-    text-align: center;
-    line-height: 10px;
+#dot{
+    border-bottom: none;
 }
 
-.op-container{
-
+#equals{
+    border-bottom: none;
+    border-right: none;
+    border-bottom-right-radius: 9px;
 }
 
 .buttons{
@@ -59,11 +61,53 @@ width: 84px;
     flex-direction: row;
 }
 
-#equals{
-    border: 2px solid black;
-    height: 40px;
-    width: 40px;
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid  rgb(56, 45, 82);
+    height: 50px;
+    width: 60px;
     text-align: center;
     line-height: 10px;
+    font-family: 'Rubik', sans-serif;
+    color: white;
+    background-color: rgb(77, 69, 85);
+    font-size: 21px;
 }
 
+.button p{
+    padding-top: 2px;
+}
+
+.operator{
+    background-color: rgb(255, 153, 0);
+}
+
+.function{
+    background-color: rgb(77, 62, 101);
+}
+
+#left_edge{
+    border-left: none;
+}
+
+#clear{
+    border-left: none;
+}
+
+#plus{
+    border-right: none;
+}
+
+#mulitply{
+    border-right: none;
+}
+
+#divide{
+    border-right: none;
+}
+
+#minus{
+    border-right: none;
+}

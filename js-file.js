@@ -30,6 +30,10 @@ function nextOperation(){
     twoNumArr=[result]
 }
 
+function round(num){
+    return Math.round((num + Number.EPSILON) * 100) / 100
+}
+
 let screen = document.getElementById("display");
 let displayVal = 0;
 let result = 0;
@@ -81,9 +85,11 @@ for(var i = 0; i < ops.length; i++){
 let equals = document.getElementById("equals");
 equals.addEventListener("click", function(event) {
     twoNumArr.push(parseFloat(disp))
-    result = operate(op,twoNumArr)
+    result = round(operate(op,twoNumArr))
     displayVal = result
     screen.innerText = displayVal
+    // testArr=[]
+    // twoNumArr=[result]
     nextOperation();
 })
 
