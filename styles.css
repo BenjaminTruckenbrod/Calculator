@@ -1,12 +1,13 @@
 .calculator{
     border: 2px solid black;
-    height: 600px;
-    width: 400px;
+    max-height: 600px;
+    max-width: 400px;
 }
 
 #screen{
     border: 2px solid black;
     text-align: right;
+    max-width: 172px;
 }
 
 .function{
@@ -37,7 +38,11 @@
     display:flex;
 }
 
- #digits{
+#zero{
+width: 84px;
+}
+
+.equals#equals{
     border: 2px solid black;
     height: 40px;
     width: 40px;
@@ -45,10 +50,20 @@
     line-height: 10px;
 }
 
-.equals#equals{
+.op-container{
+
+}
+
+.buttons{
+    display:flex;
+    flex-direction: row;
+}
+
+#equals{
     border: 2px solid black;
     height: 40px;
-    width: 80px;
+    width: 40px;
     text-align: center;
     line-height: 10px;
 }
+
