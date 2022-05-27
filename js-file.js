@@ -27,34 +27,35 @@ function operate(operator, arr){
 
 function nextOperation(){
     dispArr=[]
+    disp=null
     twoNumArr=[result]
 }
 
 function round(num){
-    return Math.round((num + Number.EPSILON) * 100) / 100
+    return Math.round((num + Number.EPSILON) * 100000) / 100000
 }
 
 let screen = document.getElementById("display");
-let displayVal = 0;
-let result = 0;
-let twoNumArr = []
-let op = "";
-let disp = ""
-let dispArr= [];
+let displayVal = 0; // what is shown on the screen
+let result = 0; 
+let twoNumArr = [] //holds the values for calculation
+let op = ""; //operator
+let disp = "" 
+let dispArr= [] //array for entering multidigit numbers
+let globalDiv="" //hold value for click highlighting
+
 
 
 var percent = document.getElementById('percent')
 percent.addEventListener('click', function(event){
-    displayVal = displayVal/100
-    disp = displayVal
+    disp = disp/100
     screen.innerText=disp
 
 })
 
 var plusMinus = document.getElementById("plus-minus")
 plusMinus.addEventListener('click', function(event){
-    displayVal = displayVal*(-1)
-    disp = displayVal
+    disp = disp*(-1)
     screen.innerText=disp
 })
 
@@ -62,7 +63,7 @@ plusMinus.addEventListener('click', function(event){
 var digits = document.getElementsByClassName('digits');
 for(var i = 0; i < digits.length; i++){
     digits[i].addEventListener('click', function(event){
-        if (dispArr.includes('.') && this.id == 'dot'){
+        if (dispArr.includes('.') && this.id == 'dot' || dispArr.length == 9){
         }
         else{
             console.log(this.innerText)
@@ -73,9 +74,31 @@ for(var i = 0; i < digits.length; i++){
             }
             displayVal=this.innerText
             screen.innerText=disp
+            // twoNumArr.push(parseFloat(disp))
         }
     });
 }
+
+
+//animating tiles when clicked
+var btns = document.getElementsByClassName('button');
+for(var i = 0; i < btns.length; i++){
+    btns[i].onmousedown = function(){
+        this.style.opacity='50%'
+        globalDiv=this
+    }
+    btns[i].onmouseup = function(){
+        this.style.opacity='100%'
+    }
+}
+
+
+var body = document.getElementById('body')
+body.onmouseup = function(){
+    globalDiv.style.opacity='100%'
+}
+
+
 
 //block handles when operators are pushed
 var ops = document.getElementsByClassName('operator');
@@ -83,10 +106,13 @@ for(var i = 0; i < ops.length; i++){
     // console: print the clicked <p> element
     ops[i].addEventListener('click', function(event){
         dispArr=[]
-        twoNumArr.push(parseFloat(disp))
+        
+        if(disp!=null)
+            twoNumArr.push(parseFloat(disp))
         
         //case for performing operations on multiple numbers without hitting "="
         if (twoNumArr.length == 2){
+            twoNumArr.push(parseFloat(disp))
             result= round(operate(op,twoNumArr))
             displayVal=result
             screen.innerText=displayVal
@@ -103,11 +129,19 @@ for(var i = 0; i < ops.length; i++){
 //block for when the equals sign is pushed
 let equals = document.getElementById("equals");
 equals.addEventListener("click", function(event) {
+    
     twoNumArr.push(parseFloat(disp))
-    result = round(operate(op,twoNumArr))
-    displayVal = result
-    screen.innerText = displayVal
-    nextOperation();
+
+    if (twoNumArr.length == 1){
+
+    }
+    else{
+        
+        result = scientific(round(operate(op,twoNumArr)))
+        displayVal = result
+        screen.innerText = displayVal
+        nextOperation();
+    }
 })
 
 //block for clearing the calculator
@@ -119,3 +153,13 @@ clear.addEventListener("click", function(event){
     disp=""
     dispArr=[]
 })
+
+//function for scientific notation of large numbers
+function scientific(num){
+    if (num > 999999999){
+        let splitArr = num.toExponential().split('e')
+        return round(parseFloat(splitArr[0])) + 'e' + splitArr[1]
+    }
+    else 
+        return num
+}
